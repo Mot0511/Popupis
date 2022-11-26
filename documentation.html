@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Popupis - Documentation</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<style media="screen">
+  .menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu a{
+    text-decoration: none;
+    font-size: 25px;
+    color: green;
+  }
+  .menu a:hover{
+    color: darkgreen;
+  }
+  .container{
+    border: 3px solid black;
+  }
+  body{
+    padding-top: 20px;
+  }
+  p{
+    margin-top: 20px;
+  }
+  li, p{
+    font-size: 20px;
+  }
+  pre{
+    font-size: 18px;
+    color: #c95208;
+  }
+  td{
+    border: 1px solid black;
+    padding: 10px;
+  }
+</style>
+  </head>
+  <body>
+    <div class="" id="popup">
+      <div>
+        Content in popup window
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2 menu">
+          <a href="#beforeStart">Before start</a>
+          <a href="#howToUseIt">How to use it</a>
+
+        </div>
+        <div class="col-lg-10 content">
+          <h1 id="beforeStart">Before start</h1>
+          <p>Before start using Popupis, you must require some things:</p>
+          <ul>
+            <li>Popupis</li>
+            <li>JQuery</li>
+          </ul>
+          <p>You can paste this lines between &lthead&gt tags for require JQuery:<br>
+          <code>&lt;script type=&quottext/javascript&quot src=&quothttps://code.jquery.com/jquery-3.6.1.min.js&quot&gt&lt/script&gt</code><br>
+          And you must paste this line up of &lt/html&gt tag for require Popupis<br>
+          <code>&ltscript type=&quottext/javascript&quot src=&quotpopupis.js&quot&gt&lt/script&gt</code><br>
+        </p>
+        <p>Eventually, you must have just about this structure of your code:</p>
+        <pre>
+          &lt!DOCTYPE html&gt
+          &lthtml lang="en" dir="ltr"&gt
+            &lthead&gt
+              &ltmeta charset="utf-8"&gt
+              &lttitle&gt&lt/title&gt
+              &ltscript type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"&gt&lt/script&gt
+            &lt/head&gt
+            &ltbody&gt
+
+            &lt/body&gt
+            &ltscript type="text/javascript" src="popupis.js"&gt&lt/script&gt<br>
+          &lt/html&gt
+        </pre>
+        <p>Now we can start use Popupis</p>
+
+        <h1 id="howToUseIt">How to use it</h1>
+        <p>First of all you must create two &ltdiv&gt blocks in each other and give parent &ltdiv&gt unique id, thus:</p>
+        <pre>
+          &ltbody&gt
+            &ltdiv id="yourID"&gt
+              &ltdiv&gt
+
+              &lt/div&gt
+            &lt/div&gt
+          &lt/body&gt
+
+        </pre>
+        <p>It is your one popup window</p>
+        <p>Now, you must register new popup window. Add a &ltscript&gt tag and call popupisInit() function between &ltscript&gt tags. <br>
+          Write array with identifiers of your popup as paramener in function. These code you must write down of the require Popupis, thus</p>
+        <pre>
+          &ltscript type="text/javascript" src="popupis.js"&gt&lt/script&gt<br>
+          &ltscript type="text/javascript"&gt
+            popupisInit(['yourID']);
+          &lt/script&gt
+        </pre>
+        <p>Next, lets add a button for all popup. You must add onClick attribtue to button.<br>
+          As a parameter write one of the these functions from table and write id of your popup in function, thus</p>
+        <pre>
+          &ltbody&gt
+            &ltdiv id="yourID"&gt
+              &ltdiv&gt
+
+              &lt/div&gt
+            &lt/div&gt
+            &ltbutton type="button" name="button" onClick="popup1('yourID')"&gtClick here&lt/button&gt
+          &lt/body&gt
+        </pre>
+        <p>Functions for onClick attribute of button</p>
+        <table>
+          <tr>
+            <td>popup1()</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>popup2()</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>popup3()</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>popup4()</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>popup5()</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>popup6()</td>
+            <td></td>
+          </tr>
+        </table>
+        <p>Eventually, we got this button, if click on it, popup will show</p>
+        <button type="button" name="button" onClick="popup1('popup')">Click here</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="popupis.js"></script>
+  <script type="text/javascript">
+    popupisInit(['popup']);
+  </script>
+</html>
